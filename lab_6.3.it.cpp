@@ -6,7 +6,7 @@
 
 using namespace std;
 
-// 1) Звичайна функція для масиву цілих чисел (int)
+// 1) Звичайна функція для обчислення кількості парних елементів (int)
 int CountEven(const int* a, const int size)
 {
     int count = 0;
@@ -20,14 +20,13 @@ int CountEven(const int* a, const int size)
     return count;
 }
 
-// 2) Шаблон функції для масивів довільного типу даних
+// 2) Шаблон функції для обчислення кількості парних елементів для довільного типу даних
 template <typename T>
 int CountEven(const T* a, const int size)
 {
     int count = 0;
     for (int i = 0; i < size; i++)
     {
-        // Умова перевірки на парність для числового типу
         if (a[i] % 2 == 0)
         {
             count++;
@@ -53,11 +52,11 @@ int main()
 
     // Виклик звичайної функції
     int count1 = CountEven(a, n);
-    cout << "CountEven(a, n) [звичайшна функція] = " << count1 << endl;
+    cout << "CountEven(a, n) [regular function] = " << count1 << endl;
 
     // Виклик шаблону функції для типу int
     int count2 = CountEven<int>(a, n);
-    cout << "CountEven<int>(a, n) [шаблон] = " << count2 << endl;
+    cout << "CountEven<int>(a, n) [template] = " << count2 << endl;
 
     return 0;
 }
